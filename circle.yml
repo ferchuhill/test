@@ -1,0 +1,14 @@
+machine:
+  node:
+    version: 6.1.0
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t platzi .
+
+test:
+  override:
+    - docker run platzi npm test
+
